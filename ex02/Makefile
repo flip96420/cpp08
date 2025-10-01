@@ -6,7 +6,7 @@
 #    By: pschmunk <pschmunk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/01 16:39:59 by pschmunk          #+#    #+#              #
-#    Updated: 2025/09/24 17:33:33 by pschmunk         ###   ########.fr        #
+#    Updated: 2025/10/01 15:44:33 by pschmunk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ RM = rm -rf
 CPP_08 = stack
 
 CPP_08_SRC =	./main.cpp	\
-				./Span.cpp	\
 
 CPP_08_OBJ = $(CPP_08_SRC:.cpp=.o)
 
