@@ -6,7 +6,7 @@
 /*   By: pschmunk <pschmunk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:24:52 by pschmunk          #+#    #+#             */
-/*   Updated: 2025/09/24 14:29:42 by pschmunk         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:18:53 by pschmunk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int main(void)
 		it_lst = easyfind(lst, 9);
 		std::cout	<< "Number " << *it_lst << " found." << std::endl;
 	}
-	catch(const char *reason)
+	catch(std::exception &e)
 	{
-		std::cerr << "Error! " << reason << std::endl;
+		std::cout << "Error! " << e.what() << std::endl;
 	}
 
 	
@@ -57,9 +57,24 @@ int main(void)
 		it_vec = easyfind(vec, 98);
 		std::cout	<< "Number " << *it_vec << " found." << std::endl;
 	}
-	catch(const char *reason)
+	catch(std::exception &e)
 	{
-		std::cerr << "Error! " << reason << std::endl;
+		std::cout << "Error! " << e.what() << std::endl;
+	}
+
+	// Const
+	std::cout	<< "\n#### Test 3: Const ####" << std::endl;
+	int temp3[] = {10, 20, 30};
+	const std::vector<int> constVec(temp3, temp3 + 3);
+	std::vector<int>::const_iterator it_const;
+	try
+	{
+		it_const = easyfind(constVec, 20);
+		std::cout	<< "Number " << *it_const << " found." << std::endl;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << "Error! " << e.what() << std::endl;
 	}
 	
 	return (0);

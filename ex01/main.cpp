@@ -6,7 +6,7 @@
 /*   By: pschmunk <pschmunk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:02:20 by pschmunk          #+#    #+#             */
-/*   Updated: 2025/09/24 18:38:02 by pschmunk         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:39:33 by pschmunk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int main()
 		std::cout << "Shortest span:\t" << sp2.shortestSpan() << std::endl;
 		std::cout << "Longest span:\t" << sp2.longestSpan() << std::endl;
 	}
-	catch (const char *reason)
+	catch (std::exception &e)
 	{
-		std::cerr	<< "Error! " << reason << std::endl;
+		std::cout	<< "Error! " << e.what() << std::endl;
 	}
 
 	std::cout	<< "\n#### Test3: No span Error ####" << std::endl;
@@ -48,9 +48,9 @@ int main()
 		std::cout << "Shortest span:\t" << sp3.shortestSpan() << std::endl;
 		std::cout << "Longest span:\t" << sp3.longestSpan() << std::endl;
 	}
-	catch (const char *reason)
+	catch (std::exception &e)
 	{
-		std::cerr	<< "Error! " << reason << std::endl;
+		std::cout	<< "Error! " << e.what() << std::endl;
 	}
 	
 
@@ -63,9 +63,9 @@ int main()
 		std::cout << "Shortest span:\t" << sp5.shortestSpan() << std::endl;
 		std::cout << "Longest span:\t" << sp5.longestSpan() << std::endl;
 	}
-	catch (const char *reason)
+	catch (std::exception &e)
 	{
-		std::cerr	<< "Error! " << reason << std::endl;
+		std::cout	<< "Error! " << e.what() << std::endl;
 	}
 	return 0;
 }

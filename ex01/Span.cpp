@@ -6,7 +6,7 @@
 /*   By: pschmunk <pschmunk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 15:09:59 by pschmunk          #+#    #+#             */
-/*   Updated: 2025/09/24 18:32:39 by pschmunk         ###   ########.fr       */
+/*   Updated: 2025/10/07 17:36:20 by pschmunk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ Span	&Span::operator=(const Span &copy)
 void	Span::addNumber(int num)
 {
 	if ((this->storage.size() + 1) > this->size)
-		throw ("Already max elements stored.");
+		throw MaxElementsException();
 	this->storage.push_back(num);
 }
 
 void	Span::addNumbers(size_t	amount)
 {
 	if ((this->storage.size() + amount) > this->size)
-		throw ("Already max elements stored.");
+		throw MaxElementsException();
 	srand(static_cast<unsigned int>(clock()));
 	for (size_t i = 0; i < amount; i++)
 		this->storage.push_back(rand());
@@ -67,7 +67,7 @@ void	Span::addNumbers(size_t	amount)
 unsigned int	Span::longestSpan()
 {
 	if (this->storage.size() == 1 || this->storage.empty())
-		throw ("Span cannot be found.");
+		throw SpanNotFoundException();
 	return (*std::max_element(this->storage.begin(), this->storage.end())
 			- *std::min_element(this->storage.begin(), this->storage.end()));
 }
@@ -75,7 +75,7 @@ unsigned int	Span::longestSpan()
 unsigned int	Span::shortestSpan()
 {
 	if (this->storage.size() == 1 || this->storage.empty())
-		throw ("Span cannot be found.");
+		throw SpanNotFoundException();
 	std::vector<unsigned int>	temp_vec;
 
 	for (size_t i = 0; i < this->storage.size(); i++)
